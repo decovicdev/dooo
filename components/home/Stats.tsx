@@ -76,7 +76,6 @@ const Stats: React.FC<StatsProps> = (props) => {
           <SubTitle fontWeight="bold">Redeem Codes</SubTitle>
         </HStack>
       </Grid>
-
       <VideoStats />
     </Container>
   );
@@ -84,54 +83,52 @@ const Stats: React.FC<StatsProps> = (props) => {
 
 const VideoStats: React.FC = () => {
   return (
-    <VStack>
-      <Box mt="10">
-        <HStack
-          w="max-content"
-          h="34px"
-          borderRadius="md"
-          border="2px solid lightgray"
-          ml="auto"
-          px="4"
-          mb="4"
-        >
-          <Caption2 color="#000" fontWeight="700">
-            March 2020
-          </Caption2>
-          <Image src="/images/calendar.png" alt="calendar icon" />
-        </HStack>
-        <Wrap spacing="6">
-          {videoStats.map((item, index) => {
-            return (
-              <WrapItem key={index}>
-                <VStack
-                  borderRadius="8px"
-                  w="248px"
-                  h="153"
-                  alignItems="center"
-                  justifyContent="center"
-                  bg="#CAEBF2"
-                >
-                  <Heading>
-                    {item.stat + " "}
-                    {index === 2 && (
-                      <Body1 as="span" fontWeight="semibold" color="#000">
-                        hrs
-                      </Body1>
-                    )}
-                  </Heading>
-                  {index === 0 && (
-                    <Caption2 fontWeight="semibold" color="#000">
-                      Viewers watching
-                    </Caption2>
+    <VStack mt="10">
+      <HStack
+        h="34px"
+        borderRadius="md"
+        border="2px solid lightgray"
+        px="4"
+        ml="auto"
+        mr="16"
+        mb="4"
+      >
+        <Caption2 color="#000" fontWeight="700">
+          March 2020
+        </Caption2>
+        <Image src="/images/calendar.png" alt="calendar icon" />
+      </HStack>
+      <Wrap spacing="6" justify="center">
+        {videoStats.map((item, index) => {
+          return (
+            <WrapItem key={index}>
+              <VStack
+                borderRadius="8px"
+                w="248px"
+                h="153"
+                alignItems="center"
+                justifyContent="center"
+                bg="#CAEBF2"
+              >
+                <Heading>
+                  {item.stat + " "}
+                  {index === 2 && (
+                    <Body1 as="span" fontWeight="semibold" color="#000">
+                      hrs
+                    </Body1>
                   )}
-                  <Heading fontWeight="extrabold">{item.title}</Heading>
-                </VStack>
-              </WrapItem>
-            );
-          })}
-        </Wrap>
-      </Box>
+                </Heading>
+                {index === 0 && (
+                  <Caption2 fontWeight="semibold" color="#000">
+                    Viewers watching
+                  </Caption2>
+                )}
+                <Heading fontWeight="extrabold">{item.title}</Heading>
+              </VStack>
+            </WrapItem>
+          );
+        })}
+      </Wrap>
     </VStack>
   );
 };
