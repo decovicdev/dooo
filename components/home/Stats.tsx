@@ -27,14 +27,14 @@ const Stats: React.FC<StatsProps> = (props) => {
         w="max-content"
         templateColumns={{
           base: "repeat(2, 1fr)",
-          md: "repeat(4, 260px)",
+          lg: "repeat(4, 1fr)",
         }}
         bg="#373A49"
         color="#fff"
         borderRadius="xl"
         overflow="hidden"
       >
-        <HStack bg="#373A49" h="122px" justify="center">
+        <HStack bg="#373A49" w="260px" h="122px" justify="center">
           <Image src="/images/banner-stats.png" alt="Stats" />
           <SubTitle fontWeight="bold">Check stats</SubTitle>
         </HStack>
@@ -42,8 +42,6 @@ const Stats: React.FC<StatsProps> = (props) => {
         <VStack
           justify="center"
           clipPath="polygon(20% 0, 100% 0%, 100% 100%, 0 100%)"
-          // scale={1.1}
-          w="260px"
           h="122px"
           bg="#fff"
           color="#000"
@@ -57,7 +55,6 @@ const Stats: React.FC<StatsProps> = (props) => {
           clipPath="polygon(0 0, 100% 0%, 80% 100%, 0% 100%)"
           bg="#fff"
           color="#000"
-          w="260px"
           h="122px"
         >
           <Caption1>Payment Type</Caption1>
